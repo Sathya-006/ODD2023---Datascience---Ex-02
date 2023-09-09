@@ -105,6 +105,7 @@ df1 = df[z<3]
 df1
 ```
 ![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/1b74e6f1-6d52-4a04-8788-cf8e8df2457a)
+
 ```
 df = pd.read_csv("height_weight.csv")
 q1 = df['weight'].quantile(0.25)
@@ -113,3 +114,68 @@ q3 = df['weight'].quantile(0.75)
 iqr = q3-q1
 iqr
 ```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/154d88b2-635e-4577-905b-ccf1463cf43e)
+```
+low = q1 - 1.5*iqr
+low
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/718e75b0-3d7a-494f-9391-d561f5704beb)
+```
+high = q3 + 1.5*iqr
+high
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/0f44de37-41ae-4f01-b454-1688420e62c2)
+```
+df1 = df[((df['weight'] >=low) & (df['weight']<= high))]
+df1
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/51c0ef54-36a9-4f79-8eb1-14ee14aa1554)
+```
+z = np.abs(stats.zscore(df1['weight']))
+z
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/bbd4d6c6-5bcf-4030-a27e-437149f89d2f)
+```
+df2 = df1[z<3]
+df2
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/91c489f3-98eb-4d21-8202-9f4194fb6965)
+```
+from google.colab import files
+uploaded = files.upload()
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/33a11039-9f86-4d69-82c3-40e15fa4d8e2)
+```
+df = pd.read_csv("heights.csv")
+q1 = df['height'].quantile(0.25)
+q2 = df['height'].quantile(0.5)
+q3 = df['height'].quantile(0.75)
+iqr = q3-q1
+iqr
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/a3d43407-3603-4ccf-8cd5-7f2f3fb5494d)
+```
+low = q1 - 1.5*iqr
+low
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/1e1e9762-bfdb-444b-9bc3-055a0cf9df4e)
+```
+high = q3 + 1.5*iqr
+high
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/276de29f-c41b-4d72-b5ce-3b5638fb3ea5)
+```
+df1 = df[((df['height'] >=low)& (df['height'] <=high))]
+df1
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/79514613-93a5-453f-9a3e-1679f735d29f)
+```
+z = np.abs(stats.zscore(df['height']))
+z
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/0c0b6cf1-77f9-4dab-8b35-3916e1e90112)
+```
+df1 = df[z<3]
+df1
+```
+![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/a0673928-4b6f-4d43-9cc4-c71b304aa2e5)
