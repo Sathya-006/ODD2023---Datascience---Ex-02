@@ -1,6 +1,7 @@
 # Ex02-Outlier
-You are given bhp.csv which contains property prices in the city of banglore, India. You need to examine price_per_sqft column and do following,
-
+# AIM
+   To examine price_per_sqft column and remove outliers using IQR
+# ALGORITHM
 (1) Remove outliers using IQR
 
 (2) After removing outliers in step 1, you get a new dataframe.
@@ -13,7 +14,7 @@ You are given bhp.csv which contains property prices in the city of banglore, In
 
 (ii) Using IQR, detect height outliers and print them
 
-CODE AND OUTPUT:
+# CODE AND OUTPUT:
 ```
 import pandas as pd
 import seaborn as sns
@@ -180,3 +181,6 @@ df1 = df[z<3]
 df1
 ```
 ![image](https://github.com/Sathya-006/ODD2023---Datascience---Ex-02/assets/121661327/a0673928-4b6f-4d43-9cc4-c71b304aa2e5)
+
+# RESULT
+   Thus price_per_sqft column was examined and outliers were removed by using IQR
